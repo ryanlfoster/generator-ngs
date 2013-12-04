@@ -1,0 +1,7 @@
+# Ignore all log files
+*.log
+
+node_modules
+
+# Ignore Compass Cache
+.sass-cache
