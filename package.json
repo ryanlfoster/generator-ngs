@@ -1,7 +1,7 @@
 {
   "name": "generator-ngs",
   "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "description": "A generator for Yeoman, to start NGS projects.",
   "keywords": [
     "yeoman-generator"
   ],
@@ -23,10 +23,7 @@
   "dependencies": {
     "yeoman-generator": "~0.14.0"
   },
-  "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-jasmine": "~0.5.2"
-  },
+  "devDependencies": {},
   "peerDependencies": {
     "yo": ">=1.0.0"
   },
