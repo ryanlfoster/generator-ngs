@@ -22,7 +22,8 @@
     "grunt-bump-build-git": "~1.1.0",
     "matchdep": "~0.1.1",
     "grunt-shell": "~0.2.2",
-    "grunt-coffeelint": "0.0.7"
+    "grunt-coffeelint": "~0.0.7",
+    "load-grunt-config": "~0.7.1"
   },
   "engines": {
     "node": ">=0.8.0"

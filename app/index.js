@@ -67,6 +67,8 @@ NgsGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('jshintrc', '.jshintrc');
   this.copy('gitignore', '.gitignore');
   this.copy('bowerrc', '.bowerrc');
+
+  this.directory('grunt', 'grunt');
 };
 
 NgsGenerator.prototype.gruntfile = function gruntfile() {
