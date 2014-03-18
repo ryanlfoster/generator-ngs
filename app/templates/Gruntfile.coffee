@@ -23,4 +23,3 @@ module.exports = (grunt) ->
                         '**/\n'
 
         ## TODO: we need to add tests to start in all modules
-        # prefered to start with Jasmine

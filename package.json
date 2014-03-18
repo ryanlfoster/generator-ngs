@@ -1,6 +1,6 @@
 {
   "name": "generator-ngs",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A generator for Yeoman, to start NGS projects.",
   "keywords": [
     "yeoman-generator"
@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "yeoman-generator": "~0.14.0",
-    "mocha": "^1.17.1"
+    "mocha": "^1.17.1",
+    "rimraf": "^2.2.6"
   },
   "devDependencies": {},
   "peerDependencies": {

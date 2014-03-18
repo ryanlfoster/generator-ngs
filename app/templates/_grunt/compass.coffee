@@ -2,7 +2,7 @@ module.exports =
     options:
         require: ['sass-globbing', 'breakpoint']
         cssDir: 'css'
-        sassDir: 'src/sass'
+        sassDir: 'scss'
         relativeAssets: true
         force: true
         bundleExec: true

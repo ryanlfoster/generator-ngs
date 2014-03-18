@@ -23,7 +23,9 @@ describe('ngs generator', function () {
         var expected = [
             // add files you expect to exist here.
             '.jshintrc',
-            '.editorconfig'
+            '.editorconfig',
+            '.bowerrc',
+            '.csslintrc'
         ];
 
         helpers.mockPrompt(this.app, {
