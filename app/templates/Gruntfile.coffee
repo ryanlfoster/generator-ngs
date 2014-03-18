@@ -1,5 +1,8 @@
 'use strict'
 module.exports = (grunt) ->
+    # measures the time each task takes
+    require('time-grunt') grunt
+
     # load all grunt tasks using load-grunt-config
     # this assumes grunt-contrib-watch, grunt-contrib-coffee,
     # grunt-coffeelint, grunt-contrib-clean, grunt-contrib-uglify is in the package.json file
@@ -21,13 +24,3 @@ module.exports = (grunt) ->
 
         ## TODO: we need to add tests to start in all modules
         # prefered to start with Jasmine
-
-
-    grunt.registerTask 'default', [
-        'clean'
-        'coffeelint'
-        'coffee:compile'
-        'compass:build'
-        'uglify'
-        'clean'
-    ]
