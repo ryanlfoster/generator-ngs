@@ -69,9 +69,9 @@ NgsGenerator.prototype.askForPreprocessors = function askForPreprocessors() {
     }];
 
     this.prompt(prompts, function (props) {
-        // this.cssPre  = props.cssPre === 'None' ? false : props.cssPre.toLowerCase();
-        // this.autoPre = props.autoPre;
-        // this.jsPre   = props.jsPre === 'None' ? false : props.jsPre.toLowerCase();
+        this.cssPre  = props.cssPre === 'None' ? false : props.cssPre.toLowerCase();
+        this.autoPre = props.autoPre;
+        this.jsPre   = props.jsPre === 'None' ? false : props.jsPre.toLowerCase();
 
         cb();
     }.bind(this));
@@ -79,8 +79,6 @@ NgsGenerator.prototype.askForPreprocessors = function askForPreprocessors() {
 
 // Begin Generating App/UI
 NgsGenerator.prototype.app = function app() {
-    this.mkdir('src');
-
     this.mkdir('templates');
     this.mkdir('js');
     this.mkdir('css');

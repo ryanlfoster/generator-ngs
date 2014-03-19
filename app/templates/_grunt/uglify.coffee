@@ -4,4 +4,4 @@ module.exports =
         banner: '<%= banner %>'
     build:
         files:
-            '<%= pkg.name %>.min.js': '<%= pkg.name %>.js'
+            '<%= pkg.name %>.min.js': 'js/*.js'
