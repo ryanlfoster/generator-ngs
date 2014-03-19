@@ -29,7 +29,12 @@ describe('ngs generator', function () {
         ];
 
         helpers.mockPrompt(this.app, {
-            'someOption': true
+            'projectName': 'Tests',
+            'useBackbone': 'Y',
+            'useRequire': 'Y',
+            'cssPre': 'Y',
+            'autoPre': 'Y',
+            'jsPre': 'Y'
         });
         this.app.options['skip-install'] = true;
         this.app.run({}, function () {

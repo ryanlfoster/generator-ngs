@@ -1,0 +1,7 @@
+default:
+  - 'clean'
+  - 'coffeelint'
+  - 'coffee:compile'
+  - 'compass:build'
+  - 'uglify'
+  - 'clean'

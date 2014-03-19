@@ -115,17 +115,24 @@ NgsGenerator.prototype.gruntCleanup = function gruntCleanup() {
     if (!this.cssPre) {
         // this.copy('_grunt/compass.coffee', 'grunt/compass.coffee');
         rimraf('grunt/compass.coffee', function () {
-            console.log('Removing Compass file');
+            console.log('Removing Compass task');
+        });
+    }
+
+    if (!this.autoPre) {
+        // this.copy('_grunt/compass.coffee', 'grunt/compass.coffee');
+        rimraf('grunt/autoprefixer.coffee', function () {
+            console.log('Removing Autoprefixer task');
         });
     }
 
     if (!this.jsPre) {
         rimraf('grunt/coffeelint.coffee', function () {
-            console.log('Removing Coffeelint file');
+            console.log('Removing Coffeelint task');
         });
 
         rimraf('grunt/coffee.coffee', function () {
-            console.log('Removing Coffee file');
+            console.log('Removing Coffee task');
 
         });
     }
