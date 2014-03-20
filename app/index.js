@@ -102,7 +102,6 @@ NgsGenerator.prototype.projectfiles = function projectfiles() {
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
     this.copy('csslintrc', '.csslintrc');
-    this.copy('gitignore', '.gitignore');
     this.copy('bowerrc', '.bowerrc');
     // We're copying over all the default tasks used by load-grunt-config
     this.directory('_grunt', 'grunt');
