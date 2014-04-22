@@ -5,7 +5,7 @@ module.exports =
         files: [
             expand: true
             cwd: './'
-            src: ['coffee/{,*/}*.coffee', '!<%= gruntfile %>']
+            src: ['coffee/{,*/}*.coffee', '!Gruntfile.coffee']
             dest: 'js'
             # we need this rename function in case files are named
             # with dot notation. e.g., ngm.module.coffee

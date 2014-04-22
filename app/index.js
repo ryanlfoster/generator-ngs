@@ -5,7 +5,7 @@ var yeoman = require('yeoman-generator');
 var rimraf = require('rimraf');
 
 
-var NgsGenerator = module.exports = function NgsGenerator(args, options, config) {
+var NgsGenerator = module.exports = function NgsGenerator(args, options) {
     yeoman.generators.Base.apply(this, arguments);
 
     this.on('end', function () {
@@ -38,7 +38,7 @@ NgsGenerator.prototype.askFor = function askFor() {
         name: 'useRequire',
         message: 'Would you like to include RequireJS (for AMD support)?',
         default: true
-    }]
+    }];
 
     this.prompt(prompts, function (props) {
         this.projectName = props.projectName;

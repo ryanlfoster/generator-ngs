@@ -1,7 +1,7 @@
 module.exports =
     # lint our files to make sure we're keeping to team standards
     files:
-        src: ['coffee/{,*/}*.coffee', '!<%= gruntfile %>']
+        src: ['coffee/{,*/}*.coffee', '!Gruntfile.coffee']
     options:
         'indentation':
             value: 4
