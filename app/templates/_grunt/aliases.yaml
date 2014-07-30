@@ -1,7 +1,7 @@
 default:
-  - 'clean'
+  - 'clean'<% if (jsPre == "coffeescript") { %>
   - 'coffeelint'
-  - 'coffee:compile'
-  - 'compass:build'
+  - 'coffee:compile'<% } %><% if (cssPre == "compass") { %>
+  - 'compass:build'<% } %>
   - 'uglify'
   - 'clean'

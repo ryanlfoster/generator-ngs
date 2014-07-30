@@ -21,13 +21,3 @@ module.exports = (grunt) ->
                 ' * Copyright (c) <%= grunt.template.today("yyyy") %>' +
                 '  | <%= pkg.author.name %>;\n' +
                 '**/\n'
-
-
-    grunt.registerTask 'default', [
-        'clean'
-        'coffeelint'
-        'coffee:compile'
-        'compass:build'
-        'uglify'
-        'clean'
-    ]
