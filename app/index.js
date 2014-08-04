@@ -135,6 +135,12 @@ NgsGenerator.prototype.gruntCleanup = function gruntCleanup() {
 
         });
     }
+
+    if (!this.jsPre && !this.cssPre) {
+        rimraf('grunt/watch.coffee', function () {
+            console.log('Removing Watch task');
+        });
+    }
     cb();
 };
 

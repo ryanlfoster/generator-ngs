@@ -8,9 +8,8 @@
   "homepage": "https://github.com/natgeo/generator-ngs",
   "bugs": "https://github.com/natgeo/generator-ngs/issues",
   "author": {
-    "name": "Chuck Carpenter",
-    "email": "chuck.carpenter@me.com",
-    "url": "https://github.com/chuckcarpenter"
+    "name": "National Geographic Society Technology",
+    "email": "appdev@ngs.org"
   },
   "main": "app/index.js",
   "repository": {
@@ -21,9 +20,10 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.14.0",
-    "mocha": "^1.17.1",
-    "rimraf": "^2.2.6"
+    "chalk": "^0.5.1",
+    "mocha": "^1.21.3",
+    "rimraf": "^2.2.8",
+    "yeoman-generator": "^0.14.2"
   },
   "devDependencies": {},
   "peerDependencies": {
