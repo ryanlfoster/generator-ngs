@@ -1,9 +1,9 @@
 'use strict';
-var util = require('util');
-var path = require('path');
-var yeoman = require('yeoman-generator');
-var rimraf = require('rimraf');
 
+var util = require('util'),
+    path = require('path'),
+    yeoman = require('yeoman-generator'),
+    rimraf = require('rimraf');
 
 var NgsGenerator = module.exports = function NgsGenerator(args, options) {
     yeoman.generators.Base.apply(this, arguments);
