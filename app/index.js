@@ -128,7 +128,7 @@ NgsGenerator.prototype.gruntCleanup = function gruntCleanup() {
         });
     }
 
-    if (!this.autoPre && (this.builder === 'grunt') ) {
+    if (!this.autoPre && (this.builder === 'grunt')) {
         // this.copy('_grunt/compass.coffee', 'grunt/compass.coffee');
         rimraf(this.builder + '/autoprefixer' + format, function () {
             console.log('Removing Autoprefixer task');

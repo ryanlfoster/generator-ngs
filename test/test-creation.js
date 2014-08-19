@@ -30,6 +30,7 @@ describe('ngs generator', function () {
 
         helpers.mockPrompt(this.app, {
             'projectName': 'Tests',
+            'builder': 'Gulp',
             'useBackbone': 'Y',
             'useRequire': 'Y',
             'cssPre': 'Y',
