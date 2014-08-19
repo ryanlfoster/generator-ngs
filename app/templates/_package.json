@@ -7,10 +7,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "bower": "1.3.x",
-    "browser-sync": "^1.3.5",
-    "chalk": "^0.5.1",
-    "del": "^0.1.1",
+    "bower": "1.3.x",<% if (builder == 'grunt') { %>
+    "load-grunt-config": "~0.7.1",
     "grunt": "0.4.x",
     "grunt-bump-build-git": "~1.1.0",
     "grunt-coffeelint": "~0.0.7",
@@ -26,6 +24,9 @@
     "grunt-contrib-uglify": "~0.2.5",
     "grunt-contrib-watch": "~0.4.4",
     "grunt-scss-lint": "^0.1.11",
+    "time-grunt": "~0.2.9",<% } %><% if (builder == 'gulp') { %>
+    "chalk": "^0.5.1",
+    "del": "^0.1.1",
     "gulp": "^3.8.6",
     "gulp-autoprefixer": "0.0.8",
     "gulp-coffee": "^2.1.1",
@@ -35,10 +36,8 @@
     "gulp-ruby-sass": "^0.7.1",
     "gulp-uglifyjs": "^0.4.2",
     "gulp-util": "^3.0.0",
-    "load-grunt-config": "~0.7.1",
     "path": "^0.4.9",
-    "require-dir": "^0.1.0",
-    "time-grunt": "~0.2.9"
+    "require-dir": "^0.1.0"<% } %>
   },
   "engines": {
     "node": ">=0.8.0"

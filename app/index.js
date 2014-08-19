@@ -29,6 +29,11 @@ NgsGenerator.prototype.askFor = function askFor() {
         name: 'projectName',
         message: 'What do you want to call your project?'
     }, {
+        type: 'list',
+        name: 'builder',
+        message: 'Would you like to run your tasks?',
+        choices: ['Grunt', 'Gulp']
+    }, {
         type: 'confirm',
         name: 'useBackbone',
         message: 'Would you like to include Backbone.js?',
@@ -42,7 +47,7 @@ NgsGenerator.prototype.askFor = function askFor() {
 
     this.prompt(prompts, function (props) {
         this.projectName = props.projectName;
-
+        this.builder = props.builder.toLowerCase();
         this.useBackbone = props.useBackbone;
         this.useRequire = props.useRequire;
 
@@ -103,48 +108,59 @@ NgsGenerator.prototype.projectfiles = function projectfiles() {
     this.copy('jshintrc', '.jshintrc');
     this.copy('csslintrc', '.csslintrc');
     this.copy('bowerrc', '.bowerrc');
-    // We're copying over all the default tasks used by load-grunt-config
-    this.directory('_grunt', 'grunt');
+    // We're copying over all the default tasks for the selected task runner
+    this.directory('_' + this.builder, this.builder);
 };
 
 NgsGenerator.prototype.gruntCleanup = function gruntCleanup() {
     // We're going to cleanup any tasks not needed
-    var cb = this.async();
+    var cb = this.async(),
+        format = this.builder === 'grunt' ? '.coffee' : '.js';
+
+    if (this.builder === 'gulp') {
+        this.builder = this.builder.concat('/tasks');
+    }
 
     if (!this.cssPre) {
         // this.copy('_grunt/compass.coffee', 'grunt/compass.coffee');
-        rimraf('grunt/compass.coffee', function () {
+        rimraf(this.builder + '/compass' + format, function () {
             console.log('Removing Compass task');
         });
     }
 
-    if (!this.autoPre) {
+    if (!this.autoPre && (this.builder === 'grunt') ) {
         // this.copy('_grunt/compass.coffee', 'grunt/compass.coffee');
-        rimraf('grunt/autoprefixer.coffee', function () {
+        rimraf(this.builder + '/autoprefixer' + format, function () {
             console.log('Removing Autoprefixer task');
         });
     }
 
     if (!this.jsPre) {
-        rimraf('grunt/coffeelint.coffee', function () {
-            console.log('Removing Coffeelint task');
-        });
+        if (this.builder === 'grunt') {
+            rimraf(this.builder + '/coffeelint' + format, function () {
+                console.log('Removing Coffeelint task');
+            });
+        } else {
+            rimraf(this.builder + '/lint' + format, function () {
+                console.log('Removing lint task');
+            });
+        }
 
-        rimraf('grunt/coffee.coffee', function () {
+        rimraf(this.builder + '/coffee' + format, function () {
             console.log('Removing Coffee task');
 
         });
     }
 
     if (!this.jsPre && !this.cssPre) {
-        rimraf('grunt/watch.coffee', function () {
+        rimraf(this.builder + '/watch' + format, function () {
             console.log('Removing Watch task');
         });
     }
     cb();
 };
 
-NgsGenerator.prototype.gruntfile = function gruntfile() {
-    // Finish off by just moving the Grunt file over
-    this.copy('Gruntfile.coffee');
+NgsGenerator.prototype.taskRunner = function gruntfile() {
+    // Finish off by just moving the task runner main file
+    this.copy((this.builder === 'grunt') ? 'Gruntfile.coffee' : 'gulpfile.js');
 };
