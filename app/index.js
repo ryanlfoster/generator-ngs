@@ -31,7 +31,7 @@ NgsGenerator.prototype.askFor = function askFor() {
     }, {
         type: 'list',
         name: 'builder',
-        message: 'Would you like to run your tasks?',
+        message: 'How would you like to run your tasks?',
         choices: ['Grunt', 'Gulp']
     }, {
         type: 'confirm',
