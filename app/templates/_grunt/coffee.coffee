@@ -10,5 +10,5 @@ module.exports =
             # we need this rename function in case files are named
             # with dot notation. e.g., ngm.module.coffee
             rename: (destBase, destPath) ->
-                destBase + destPath.replace(/\.coffee$/, '.js')
+                destBase + "/" + destPath.replace(/\.coffee$/, '.js')
         ]
