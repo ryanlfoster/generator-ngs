@@ -1,6 +1,11 @@
 {
-  "name": "package",
+  "name": "<%= _.slugify(projectName) %>",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {
+    <% if (useBackbone) { %>"backbone": "~1.0.0",
+    "jquery": "~1.10.1",
+    "underscore": "~1.4"<% } %><% if (useBackbone && useRequire) { %>,
+    "requirejs": "~2.1.4"<% } %>
+  }
 }
 

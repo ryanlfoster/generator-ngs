@@ -1,16 +1,15 @@
 {
   "name": "generator-ngs",
-  "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "version": "0.1.0",
+  "description": "A generator for Yeoman, to start NGS projects.",
   "keywords": [
     "yeoman-generator"
   ],
   "homepage": "https://github.com/natgeo/generator-ngs",
   "bugs": "https://github.com/natgeo/generator-ngs/issues",
   "author": {
-    "name": "Chuck Carpenter",
-    "email": "chuck.carpenter@me.com",
-    "url": "https://github.com/chuckcarpenter"
+    "name": "National Geographic Society Technology",
+    "email": "appdev@ngs.org"
   },
   "main": "app/index.js",
   "repository": {
@@ -21,12 +20,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.14.0"
+    "chalk": "^0.5.1",
+    "mocha": "^1.21.3",
+    "rimraf": "^2.2.8",
+    "yeoman-generator": "^0.14.2"
   },
-  "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-jasmine": "~0.5.2"
-  },
+  "devDependencies": {},
   "peerDependencies": {
     "yo": ">=1.0.0"
   },

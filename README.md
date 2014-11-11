@@ -1,4 +1,4 @@
-# generator-ngs [![Build Status](https://secure.travis-ci.org/natgeo/generator-ngs.png?branch=master)](https://travis-ci.org/natgeo/generator-ngs)
+# generator-ngs [![Build Status](https://secure.travis-ci.org/natgeo/generator-ngs.png?branch=develop)](https://travis-ci.org/natgeo/generator-ngs)
 
 A generator for [Yeoman](http://yeoman.io).
 
