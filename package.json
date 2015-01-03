@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "chalk": "^0.5.1",
-    "mocha": "^1.21.3",
+    "mocha": "^1.21.5",
     "rimraf": "^2.2.8",
     "yeoman-generator": "^0.14.2"
   },
