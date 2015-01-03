@@ -23,9 +23,9 @@ Thumbs.db
 # Ignore all log files
 *.log
 
-app/libs
 dist
 node_modules
+bower_components
 .tmp
 
 # Ignore Compass Cache

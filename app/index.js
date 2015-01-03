@@ -107,7 +107,6 @@ NgsGenerator.prototype.projectfiles = function projectfiles() {
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
     this.copy('csslintrc', '.csslintrc');
-    this.copy('bowerrc', '.bowerrc');
     // We're copying over all the default tasks for the selected task runner
     this.directory('_' + this.builder, this.builder);
 };
