@@ -28,12 +28,14 @@ NgsGenerator.prototype.askFor = function askFor() {
     var prompts = [{
         name: 'projectName',
         message: 'What do you want to call your project?'
-    }, {
-        type: 'list',
-        name: 'builder',
-        message: 'How would you like to run your tasks?',
-        choices: ['Grunt', 'Gulp']
-    }, {
+    },
+    // {
+    //     type: 'list',
+    //     name: 'builder',
+    //     message: 'How would you like to run your tasks?',
+    //     choices: ['Grunt', 'Gulp']
+    // },
+    {
         type: 'confirm',
         name: 'useBackbone',
         message: 'Would you like to include Backbone.js?',
@@ -47,7 +49,9 @@ NgsGenerator.prototype.askFor = function askFor() {
 
     this.prompt(prompts, function (props) {
         this.projectName = props.projectName;
-        this.builder = props.builder.toLowerCase();
+        // removing Gulp option for now
+        // this.builder = props.builder.toLowerCase();
+        this.builder = 'grunt';
         this.useBackbone = props.useBackbone;
         this.useRequire = props.useRequire;
 
@@ -107,6 +111,7 @@ NgsGenerator.prototype.projectfiles = function projectfiles() {
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
     this.copy('csslintrc', '.csslintrc');
+    this.copy('_coffeelint.json', 'coffeelint.json');
     // We're copying over all the default tasks for the selected task runner
     this.directory('_' + this.builder, this.builder);
 };
@@ -157,6 +162,12 @@ NgsGenerator.prototype.gruntCleanup = function gruntCleanup() {
         });
     }
     cb();
+};
+
+NgsGenerator.prototype.tests = function git() {
+    // simply copy the test dir and config file for karma
+    this.directory('_spec', 'spec');
+    this.copy('karma.conf.js');
 };
 
 NgsGenerator.prototype.taskRunner = function gruntfile() {

@@ -28,5 +28,8 @@ node_modules
 bower_components
 .tmp
 
+# ignore test coverage results
+coverage
+
 # Ignore Compass Cache
 .sass-cache

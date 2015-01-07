@@ -1,7 +1,20 @@
 default:
+  - 'build'
+
+build:
   - 'clean'<% if (jsPre == "coffeescript") { %>
   - 'coffeelint'
   - 'coffee:compile'<% } %><% if (cssPre == "compass") { %>
   - 'compass:build'<% } %>
+  - 'jshint'
+  - 'karma:unit'  
   - 'uglify'
+
+dev:
   - 'clean'
+  - 'jshint'
+  - 'karma:unit'
+  - 'browserify:dev'
+  - 'replace:derequire'
+  - 'browserSync:serve'
+  - 'watch'
